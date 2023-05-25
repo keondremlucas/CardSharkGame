@@ -1,0 +1,25 @@
+<div *ngIf= 'cardHolder' class="container d-flex justify-content-center" >
+<form (ngSubmit)='onSubmit($event)' [formGroup]="playForm"  >
+  <div class="form-group">
+    <div class ="text-center"><label for="HighorLow" >Card Shark</label></div>
+    <small  class="form-text text-muted">Guess if the value of the next card is Higher or Lower than the one displayed!</small>
+
+  </div>
+  <div class = "text-center"><small  class="form-text text-muted" style ="text-align: center;">The next card displayed is the answer for the last question.</small></div>
+  <div class="col">
+    <div class=" card-body  border  border-dark border-bottom-0 rounded border-5">
+      <img src= {{cardHolder[0].imageurl}} class="d-block mx-auto rounded w-40 h-40 bg-white " alt="..." style = "margin-top: 20px; border:3px solid black " ><img>
+
+    </div>
+  </div>
+    <div class = "col">
+    <div class=" card-body  border  border-dark border-top-0 rounded border-5">
+      <img src ="assets/images/placeholder.png" class="d-block mx-auto rounded w-40 h-40  " alt="..." style = "margin-top: 20px; border:3px solid black" ><img>
+    </div>
+  </div>
+
+  <div *ngIf= "correct" class="alert alert-success text-center" role="alert"> Correct! The card was a {{cardHolder2[1].value}}! </div>
+  <div *ngIf= "wrong" class="alert alert-danger text-center" role="alert">Wrong! The card was a {{cardHolder2[1].value}}! Try again!</div>
+  <div  class ="d-flex justify-content-center" style="margin-top: 10px;">
+
+    <button type="submit" name = "Higher" class="btn btn-primary">Hg
